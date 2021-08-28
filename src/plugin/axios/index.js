@@ -11,6 +11,7 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   (config) => {
+    config.url = window.base + config.url;
     // 在发送请求设置cancel token
     config.cancelToken = new axios.CancelToken((cancel) => {
       store.dispatch("acrou/cancelToken/push", cancel);

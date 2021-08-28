@@ -80,7 +80,7 @@
 import { decode64 } from "@utils/AcrouUtil";
 import VuePlyr from "vue-plyr";
 export default {
-  comments: {
+  components: {
     VuePlyr,
   },
   data: function() {
@@ -99,7 +99,12 @@ export default {
       let index = path.lastIndexOf(".");
       this.suffix = path.substring(index + 1, path.length);
       this.loadSub(path, index);
-      this.videoUrl = window.location.origin + path;
+      this.videoUrl =
+        (process.env.VUE_APP_API
+          ? process.env.VUE_APP_API
+          : window.location.origin) +
+        window.base +
+        path;
       this.apiVideoUrl = this.options.api + this.videoUrl;
       if (!this.options.api) {
         let options = {

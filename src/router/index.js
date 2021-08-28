@@ -35,6 +35,7 @@ const router = new VueRouter({
       };
     }
   },
+  base: window.base,
   routes,
 });
 
