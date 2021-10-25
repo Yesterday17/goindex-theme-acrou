@@ -308,16 +308,19 @@ export default {
       this.target(file, target);
     },
     target(file, target) {
-      let path = window.base + file.path;
+      let path = file.path;
       if (target === "_blank") {
+        path = window.base + file.path;
         window.open(path);
         return;
       }
       if (target === "copy") {
+        path = window.base + file.path;
         this.copy(path);
         return;
       }
       if (target === "down" || (!checkExtends(path) && !file.isFolder)) {
+        path = window.base + file.path;
         location.href = path.replace(/^\/(\d+:)\//, "/$1down/");
         return;
       }
