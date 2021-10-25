@@ -67,7 +67,7 @@ var authConfig = {
 var themeOptions = {
   cdn: "https://cdn.jsdelivr.net/gh/Yesterday17/goindex-theme-acrou",
   // 主题版本号
-  version: "v2.0.14",
+  version: "v2.0.15",
   //可选默认系统语言:en/zh-chs/zh-cht
   languages: "en",
   render: {

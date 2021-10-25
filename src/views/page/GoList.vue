@@ -252,7 +252,7 @@ export default {
       }
     },
     copy(path) {
-      let origin = window.location.origin + window.base;
+      let origin = window.base;
       path = origin + encodeURI(path);
       this.$copyText(path);
     },
