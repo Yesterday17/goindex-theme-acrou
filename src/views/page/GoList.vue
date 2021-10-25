@@ -252,7 +252,7 @@ export default {
       }
     },
     copy(path) {
-      let origin = window.location.origin;
+      let origin = window.location.origin + window.base;
       path = origin + encodeURI(path);
       this.$copyText(path);
     },
@@ -308,7 +308,7 @@ export default {
       this.target(file, target);
     },
     target(file, target) {
-      let path = file.path;
+      let path = window.base + file.path;
       if (target === "_blank") {
         window.open(path);
         return;
