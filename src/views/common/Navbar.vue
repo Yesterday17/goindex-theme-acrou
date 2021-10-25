@@ -2,7 +2,7 @@
   <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" :href="window.base + currgd.id">
+        <a class="navbar-item" :href="base + currgd.id">
           <h3 class="title is-3 has-text-white">{{ siteName }}</h3>
         </a>
         <a
@@ -141,6 +141,9 @@ export default {
     showSearch() {
       // 文件夹不支持搜索
       return window.MODEL ? window.MODEL.root_type < 2 : true;
+    },
+    base() {
+      return window.base;
     },
   },
   watch: {
